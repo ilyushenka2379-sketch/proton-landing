@@ -1,280 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Proton — Download & Info</title>
+    <title>About Proton — Next Gen Messaging</title>
     <style>
-        /* General styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background-color: #f4f7f6;
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        /* Header */
-        header {
-            background-color: #ffffff;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #0078d4;
-        }
-        /* Hero Section */
-        .hero {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 20px;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 48px;
-            color: #111;
-            margin-bottom: 20px;
-        }
-        .hero p {
-            font-size: 20px;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto 40px auto;
-        }
-        /* Buttons Container */
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-        /* Action Buttons */
-        .btn-download {
-            display: inline-flex;
-            align-items: center;
-            background-color: #0078d4;
-            color: white;
-            padding: 15px 35px;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 120, 212, 0.4);
-            transition: background 0.2s, transform 0.2s;
-        }
-        .btn-download:hover {
-            background-color: #005a9e;
-            transform: translateY(-2px);
-        }
-        .btn-web {
-            display: inline-flex;
-            align-items: center;
-            background-color: #ffffff;
-            color: #0078d4;
-            border: 2px solid #0078d4;
-            padding: 15px 35px;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background 0.2s, transform 0.2s;
-        }
-        .btn-web:hover {
-            background-color: #f0f7ff;
-            transform: translateY(-2px);
-        }
-        .btn-subtext {
-            display: block;
-            font-size: 12px;
-            color: #888;
-            margin-top: 10px;
-        }
-        /* Features Section */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 20px;
-        }
-        .feature-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
-            text-align: center;
-        }
-        .feature-card h3 {
-            margin-bottom: 15px;
-            color: #111;
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+
+        /* DEEP BLACK DARK THEME SPECIFICATIONS */
+        [data-page-theme="dark"] {
+            --bg-body: #000000;
+            --bg-section: #050505;
+            --bg-card: rgba(30, 41, 59, 0.3);
+            --border-card: rgba(255, 255, 255, 0.04);
+            --border-section: rgba(255, 255, 255, 0.06);
+            --text-main: #94a3b8;
+            --text-title: #ffffff;
+            --btn-toggle-bg: rgba(255, 255, 255, 0.05);
+            --shadow-img: rgba(0, 0, 0, 0.6);
         }
 
-        /* Interface Screenshots Section */
-        .interface-section {
-            background-color: #ffffff;
-            padding: 80px 20px;
-            border-top: 1px solid #e2e8f0;
-        }
-        .interface-container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        .section-title {
-            font-size: 36px;
-            text-align: center;
-            color: #111;
-            margin-bottom: 10px;
-        }
-        .section-subtitle {
-            font-size: 18px;
-            text-align: center;
-            color: #666;
-            margin-bottom: 60px;
-        }
-        .screenshot-row {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            margin-bottom: 80px;
-        }
-        .screenshot-row.reversed {
-            flex-direction: row-reverse;
-        }
-        .screenshot-text {
-            flex: 1;
-        }
-        .screenshot-text h3 {
-            font-size: 26px;
-            color: #0078d4;
-            margin-bottom: 15px;
-        }
-        .screenshot-text p {
-            font-size: 16px;
-            color: #4a5568;
-            line-height: 1.7;
-        }
-        .screenshot-image-box {
-            flex: 1.2;
-            text-align: center;
-        }
-        .screenshot-img {
-            max-width: 100%;
-            max-height: 450px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            border: 1px solid #e2e8f0;
-            transition: transform 0.3s;
-        }
-        .screenshot-img:hover {
-            transform: scale(1.02);
+        /* LIGHT MODE MATRIX STYLES */
+        [data-page-theme="white"] {
+            --bg-body: #f8fafc;
+            --bg-section: #ffffff;
+            --bg-card: #ffffff;
+            --border-card: rgba(0, 0, 0, 0.06);
+            --border-section: #e2e8f0;
+            --text-main: #475569;
+            --text-title: #0f172a;
+            --btn-toggle-bg: #e2e8f0;
+            --shadow-img: rgba(0, 0, 0, 0.08);
         }
 
-        /* Footer */
-        footer {
-            background: #243036;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            font-size: 14px;
-        }
+        body { background-color: var(--bg-body); color: var(--text-main); line-height: 1.6; overflow-x: hidden; transition: background-color 0.25s, color 0.25s; }
+        header { background-color: var(--bg-body); padding: 15px 40px; border-bottom: 1px solid var(--border-section); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; transition: background 0.25s, border 0.25s; }
+        .logo { font-size: 24px; font-weight: bold; color: var(--text-title); transition: color 0.25s; }
 
-        /* Responsive for mobile phones */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
-            .screenshot-row, .screenshot-row.reversed {
-                flex-direction: column;
-                gap: 25px;
-                margin-bottom: 40px;
-            }
-        }
+        .header-controls { display: flex; align-items: center; gap: 15px; }
+        .theme-switcher-panel { display: flex; gap: 6px; }
+        .theme-toggle-btn { background: var(--btn-toggle-bg); color: var(--text-main); border: 1px solid var(--border-section); padding: 6px 18px; font-size: 13px; font-weight: bold; border-radius: 20px; cursor: pointer; transition: all 0.2s; }
+        .theme-toggle-btn:hover { color: var(--text-title); border-color: var(--text-main); }
+        .theme-toggle-btn.active { background: #007bff; color: white; border-color: #007bff; box-shadow: 0 0 12px rgba(0, 123, 255, 0.35); }
     </style>
 </head>
+    <style>
+        .hero { max-width: 1200px; margin: 80px auto 40px auto; padding: 20px; text-align: center; animation: fadeIn 0.6s ease-out; }
+        .hero h1 { font-size: 54px; color: var(--text-title); margin-bottom: 20px; font-weight: 800; letter-spacing: -1px; transition: color 0.25s; }
+        .hero p { font-size: 20px; color: var(--text-main); max-width: 650px; margin: 0 auto 40px auto; transition: color 0.25s; }
+        .cta-buttons { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-bottom: 20px; }
+        .btn-download { display: inline-flex; align-items: center; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); color: white; padding: 16px 38px; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 123, 255, 0.25); transition: all 0.2s; }
+        .btn-download:hover { background: linear-gradient(135deg, #1e90ff 0%, #007bff 100%); box-shadow: 0 6px 25px rgba(0, 123, 255, 0.45); transform: translateY(-2px); }
+        .btn-web { display: inline-flex; align-items: center; background: rgba(0, 120, 212, 0.05); color: #0078d4; border: 2px solid #0078d4; padding: 15px 36px; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 8px; transition: all 0.2s; }
+        .btn-web:hover { background: #0078d4; color: white; box-shadow: 0 0 20px rgba(0, 120, 212, 0.25); transform: translateY(-2px); }
+        .btn-subtext { display: block; font-size: 12px; color: #64748b; margin-top: 10px; font-weight: 500; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 60px auto; padding: 20px; }
+        .feature-card { background: var(--bg-card); border: 1px solid var(--border-card); padding: 35px 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; transition: all 0.25s; }
+        .feature-card:hover { transform: translateY(-4px); border-color: #007bff; box-shadow: 0 15px 35px rgba(0, 123, 255, 0.12); }
+        .feature-card h3 { margin-bottom: 15px; color: var(--text-title); font-size: 20px; transition: color 0.25s; }
+        .feature-card p { color: var(--text-main); font-size: 15px; transition: color 0.25s; }
+        .interface-section { background: var(--bg-section); padding: 80px 20px; border-top: 1px solid var(--border-section); transition: background 0.25s; }
+        .interface-container { max-width: 1100px; margin: 0 auto; }
+        .section-title { font-size: 38px; text-align: center; color: var(--text-title); margin-bottom: 12px; font-weight: 700; transition: color 0.25s; }
+        .section-subtitle { font-size: 18px; text-align: center; color: var(--text-main); margin-bottom: 60px; transition: color 0.25s; }
+        .screenshot-row { display: flex; align-items: center; gap: 60px; margin-bottom: 100px; }
+        .screenshot-row.reversed { flex-direction: row-reverse; }
+        .screenshot-text { flex: 1; }
+        .screenshot-text h3 { font-size: 28px; color: #0078d4; margin-bottom: 15px; font-weight: 700; }
+        .screenshot-text p { font-size: 16px; color: var(--text-main); line-height: 1.8; transition: color 0.25s; }
+        .screenshot-image-box { flex: 1.3; text-align: center; }
+        .screenshot-img { max-width: 100%; max-height: 480px; border-radius: 12px; box-shadow: 0 20px 45px var(--shadow-img); border: 1px solid var(--border-section); transition: all 0.25s; }
+        footer { background: var(--bg-body); color: #64748b; text-align: center; padding: 40px; font-size: 14px; border-top: 1px solid var(--border-section); transition: background 0.25s; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { .hero h1 { font-size: 36px; } .screenshot-row, .screenshot-row.reversed { flex-direction: column; gap: 30px; margin-bottom: 50px; } }
+    </style>
+    <script>
+        // Компактный сопряженный скрипт переключения интерфейсов страницы
+        function changePreviewTheme(mode) {
+            const isWhite = (mode === 'white');
+            document.getElementById('btn-theme-white').classList.toggle('active', isWhite);
+            document.getElementById('btn-theme-dark').classList.toggle('active', !isWhite);
+            document.documentElement.setAttribute('data-page-theme', mode);
+            document.getElementById('img-screenshot-login').src = isWhite ? 'login_white.png' : 'login.png';
+            document.getElementById('img-screenshot-chat').src = isWhite ? 'chat_white.png' : 'chat.png';
+        }
+    </script>
 <body>
 
     <header>
-        <div class="logo">💬 Proton</div>
+        <div class="logo">Proton</div>
+        <div class="header-controls">
+            <div class="theme-switcher-panel">
+                <button id="btn-theme-white" class="theme-toggle-btn" onclick="changePreviewTheme('white')">White</button>
+                <button id="btn-theme-dark" class="theme-toggle-btn active" onclick="changePreviewTheme('dark')">Dark</button>
+            </div>
+        </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section class="hero">
             <h1>Next Generation Messaging</h1>
             <p>A fast, secure, and intuitive messenger for your daily chats and work, available on desktop and web.</p>
-            
             <div class="cta-buttons">
                 <div>
-                    <!-- Ссылка на скачивание десктоп версии с твоего GitHub Releases -->
-                    <a href="https://github.com" class="btn-download" download>
-                        Download for Windows
-                    </a>
+                    <a href="https://github.com" class="btn-download" download>Download for Windows</a>
                     <span class="btn-subtext">Windows 10 / 11 (64-bit)</span>
                 </div>
-                
                 <div>
-                    <!-- Кнопка ведет обратно на твой index.html (экран логина) -->
-                    <a href="https://proton-chat-20cs.onrender.com" class="btn-web">
-                        Open Web Version
-                    </a>
-
+                    <a href="https://onrender.com" class="btn-web">Open Web Version</a>
                     <span class="btn-subtext">No installation required</span>
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
         <section class="features">
             <div class="feature-card">
-                <h3>⚡ Blazing Fast</h3>
-                <p>Instant message and file delivery with zero lag, no matter the distance.</p>
+                <h3>Blazing Fast</h3>
+                <p>Instant message and file delivery with zero lag, no matter the distance via high-speed WebSockets tunnel.</p>
             </div>
             <div class="feature-card">
-                <h3>🔒 Privacy First</h3>
-                <p>Reliable encryption keeps your personal data safe from prying eyes.</p>
+                <h3>Privacy First</h3>
+                <p>Reliable encryption and secure session handlers keep your personal data safe from prying eyes.</p>
             </div>
             <div class="feature-card">
-                <h3>🎨 Clean Design</h3>
-                <p>No distractions. Just you, your friends, and a beautifully simple interface.</p>
+                <h3>Clean Design</h3>
+                <p>No distractions. Just you, your friends, and a beautifully simple interface built for speed.</p>
             </div>
         </section>
 
-        <!-- Interface Screenshots Showcase -->
         <section class="interface-section">
             <div class="interface-container">
                 <h2 class="section-title">Explore Proton Interface</h2>
-                <p class="section-subtitle">Take a closer look at the minimal and functional layouts created for your comfort.</p>
+                <p class="section-subtitle">Take a closer look at the minimal layouts created for your comfort.</p>
 
-                <!-- First Screenshot (Login Window) -->
                 <div class="screenshot-row">
                     <div class="screenshot-text">
-                        <h3>Secure onboarding</h3>
-                        <p>Get started in seconds! The Proton onboarding panel offers a seamless, combined Sign-In and Registration interface. All it takes is your nickname and password to jump straight into the workspace.</p>
+                        <h3>Secure Onboarding</h3>
+                        <p>Get started in seconds! The Proton onboarding panel offers a seamless, secure interface. All it takes is your nickname and password to register an account or sign in straight into the secure workspace.</p>
                     </div>
                     <div class="screenshot-image-box">
-                        <!-- Не забудь переименовать первый скриншот (с ракетой) в login.png и положить в репозиторий -->
-                        <img src="login.png" alt="Proton Authentication Interface" class="screenshot-img">
+                        <img id="img-screenshot-login" src="login.png" alt="Proton Onboarding" class="screenshot-img">
                     </div>
                 </div>
 
-                <!-- Second Screenshot (Chat Room) -->
                 <div class="screenshot-row reversed">
                     <div class="screenshot-text">
                         <h3>Feature-Rich Workspace</h3>
-                        <p>Enjoy an optimized, clutter-free chat screen. Proton comes equipped with a dedicated file attachment engine to send media or documents instantly, alongside integrated microphone support for smooth voice note recording.</p>
+                        <p>Enjoy an optimized, clutter-free chat screen split with an active Sidebar layout. Proton comes equipped with an upgraded file attachment engine, instant real-time Private Messages, customization profiles, and integrated microphone support.</p>
                     </div>
                     <div class="screenshot-image-box">
-                        <!-- Не забудь переименовать второй скриншот (с чатом) в chat.png и положить в репозиторий -->
-                        <img src="chat.png" alt="Proton Chat Window Layout" class="screenshot-img">
+                        <img id="img-screenshot-chat" src="chat.png" alt="Proton Chat Layout" class="screenshot-img">
                     </div>
                 </div>
             </div>
